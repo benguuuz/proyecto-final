@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Ejercicio 1{% endblock %}
+{% block content %}
+<section>
+    <h2>Calculadora de Descuentos</h2>
+    <form method="POST">
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
+        <input type="number" name="edad" placeholder="Ingresa tu edad" required>
+        <input type="number" name="cantidad" placeholder="Cantidad de tarros" required>
+        <button type="submit">Calcular</button>
+    </form>
+    {% if total_sin_descuento is not none %}
+    <h3>Resultados</h3>
+    <table style="margin: 0 auto; border-collapse: collapse; text-align: left;">
+        <tr><td><strong>Nombre:</strong></td><td>{{ nombre }}</td></tr>
+        <tr><td><strong>Total sin descuento:</strong></td><td>${{ total_sin_descuento }}</td></tr>
+        <tr><td><strong>Descuento:</strong></td><td>${{ descuento }}</td></tr>
+        <tr><td><strong>Total a pagar:</strong></td><td>${{ total_con_descuento }}</td></tr>
+    </table>
+    {% endif %}
+</section>
+{% endblock %}

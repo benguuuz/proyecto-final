@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Ejercicio 2{% endblock %}
+{% block content %}
+<section>
+    <h2>Inicio de Sesión</h2>
+    <form method="POST">
+        <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
+        <input type="password" name="contraseña" placeholder="Ingresa tu contraseña" required>
+        <button type="submit">Verificar</button>
+    </form>
+    {% if mensaje is not none %}
+    <p>{{ mensaje }}</p>
+    {% endif %}
+</section>
+{% endblock %}
